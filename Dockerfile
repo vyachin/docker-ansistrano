@@ -1,7 +1,4 @@
-FROM ubuntu:focal
+FROM alpine:latest
 
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
-    && apt update -yq \
-    && apt upgrade -yq \ 
-    && apt install ansible -yq \
+RUN apk add --no-cache ansible \
     && ansible-galaxy install --force ansistrano.deploy

@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:latest
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
     && apt update -yq \

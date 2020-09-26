@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:buster-slim
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
     && apt update -yq \
